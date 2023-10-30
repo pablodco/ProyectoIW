@@ -4,6 +4,27 @@
         <title>Be right back.</title>
     </head>
     <body>
-        <h1>{nombre}</h1>
+        <header>
+            <h1>Todo Basquet</h1>
+            <img src="" alt="logo">
+        </header>
+        <nav>
+            <a>listaEquipos</a>
+            <a>listaJugadores</a>
+            <a>Contacto</a>
+        </nav>
+        <section>
+            <h1>Categorias</h1>
+            {% block content %}
+            {% for categoria in categorias%}
+            <article class="categoria">
+                <h2><a href="/{{categoria.id}}/equipos">{{categoria.nombreCategoria}}</a>
+                <p>{{categoria.descripcion}}</p>
+                </article>
+            {% endfor %}
+            {% endblock %}
+        </section>
+        <footer></footer>
+        <h1>{{nombre}}</h1>
     </body>
 </html>

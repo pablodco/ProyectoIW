@@ -20,7 +20,7 @@ class equipo(models.Model):
     nombreEquipo = models.CharField(max_length=40, unique=True)
     ciudad = models.CharField(max_length=40)
     nombrePropietario= models.CharField(max_length=40)
-    categoria= models.ForeignKey('categoria',on_delete=models.CASCADE)
+    categoria= models.ForeignKey('categoria',on_delete=models.CASCADE, related_name='equipos')
 
 class categoria(models.Model):
     nombreCategoria = models.CharField(max_length=40,unique=True)
