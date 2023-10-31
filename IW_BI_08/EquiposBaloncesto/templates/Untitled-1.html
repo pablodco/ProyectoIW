@@ -4,9 +4,9 @@
         <title>Be right back.</title>
     </head>
     <body>
-        <h1>{{nombre}}</h1>
-        {%for equipo in cat.equipos.all%}
-        <p>{{equipo.name}} - {{equipo.city}}</p> 
+        <h1></h1>
+        {%for jugador in equipo.jugadores.all%}
+        <p>{{jugador.nombre}} - {{}}</p> 
         {%endfor%}
     </body>
 </html>

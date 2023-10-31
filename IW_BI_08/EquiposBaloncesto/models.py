@@ -14,7 +14,7 @@ class jugador(models.Model):
     partidosJugados= models.IntegerField()
     añoDraft= models.IntegerField()
     dorsal= models.IntegerField()
-    equipo= models.ForeignKey('equipo',on_delete=models.CASCADE)
+    equipo= models.ForeignKey('equipo',on_delete=models.CASCADE, related_name='jugadores')
 
 class equipo(models.Model):
     nombreEquipo = models.CharField(max_length=40, unique=True)

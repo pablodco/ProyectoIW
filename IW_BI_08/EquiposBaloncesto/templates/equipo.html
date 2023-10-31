@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Be right back.</title>
+  </head>
+  <body>
+    <header></header>
+    <nav></nav>
+    <main>
+      <section>
+        <h2><i>{{equipo.nombreEquipo}}---{{equipo.ciudad}}</i></h2>
+      </section>
+      <section>
+        <table>
+          <tr>
+            <th>Nombre</th>
+            <th>PPP</th>
+          </tr>
+          {% for jugador in equipo.jugadores.all %}
+          <tr>
+            <td>{{jugador.nombre}}</td>
+            <td>{{jugador.puntosPorPartido}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
