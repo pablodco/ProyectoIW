@@ -7,6 +7,7 @@
         <h1>{{cat.nombreCategoria}}</h1>
         {%block content%}
         {%for equipo in cat.equipos.all%}
+        <a href="% url 'equipo' cat.nombreCategoria/equipo.nombreEquipo%">{{equipo.nombreEquipo}}</a>
         <p>{{equipo.nombreEquipo}} - {{equipo.ciudad}}</p> 
         {%endfor%}
         {%endblock%}

@@ -11,16 +11,15 @@
         <h2><i>{{equipo.nombreEquipo}}---{{equipo.ciudad}}</i></h2>
       </section>
       <section>
-        <table>
-          <tr>
-            <th>Nombre</th>
-            <th>PPP</th>
-          </tr>
           {% for jugador in equipo.jugadores.all %}
-          <tr>
-            <td>{{jugador.nombre}}</td>
-            <td>{{jugador.puntosPorPartido}}</td>
-          </tr>
+            <img src="" alt="imagen{{jugador.nombre}}">
+            <article>
+            <p>{{jugador.nombre}}</p>
+            <p>{{jugador.puntosPorPartido}}</p>
+            <p>{{jugador.asistenciasPorPartido}}</p>
+            <p>{{jugador.rebotesPorPartido}}</p>
+            <p>{{jugador.dorsal}}</p>
+            </article>
           {% endfor %}
         </table>
       </section>

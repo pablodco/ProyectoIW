@@ -18,7 +18,7 @@
             {% block content %}
             {% for categoria in categorias%}
             <article class="categoria">
-                <h2><a href="/{{categoria.id}}/equipos">{{categoria.nombreCategoria}}</a>
+                <h2><a href="% url 'categoria' categoria.nombreCategoria %">{{categoria.nombreCategoria}}</a>
                 <p>{{categoria.descripcion}}</p>
                 </article>
             {% endfor %}
