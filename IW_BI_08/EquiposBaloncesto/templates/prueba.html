@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Be right back.</title>
+        <title>TODO BASQUET</title>
     </head>
     <body>
         <header>
-            <h1>Todo Basquet</h1>
+            <h1>TODO BASQUET</h1>
             <img src="" alt="logo">
         </header>
         <nav>
@@ -14,10 +14,10 @@
             <a>Contacto</a>
         </nav>
         <section>
-            <h1>Categorias</h1>
+            <h2>CATEGORIAS</h2>
             {% block content %}
             {% for categoria in categorias%}
-            <article class="categoria">
+            <article class="cat">
                 <h2><a href="% url 'categoria' categoria.nombreCategoria %">{{categoria.nombreCategoria}}</a>
                 <p>{{categoria.descripcion}}</p>
                 </article>

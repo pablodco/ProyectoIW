@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Be right back.</title>
+        <title>{{cat.nombreCategoria}}</title>
     </head>
     <body>
         <h1>{{cat.nombreCategoria}}</h1>
         {%block content%}
         {%for equipo in cat.equipos.all%}
-        <a href="% url 'equipo' cat.nombreCategoria/equipo.nombreEquipo%">{{equipo.nombreEquipo}}</a>
+        <img src="{{equipo.logo}}" width="100" height="100">
+        <br><br>
+        <a href="{% url 'Equipoinfo' equipo.categoria equipo.nombreEquipo %}">{{equipo.nombreEquipo}}</a>
+        <br>
+        <a href="{% url 'equipo' equipo.categoria equipo.nombreEquipo %}">Plantilla</a>
         <p>{{equipo.nombreEquipo}} - {{equipo.ciudad}}</p> 
+        <br><br>
         {%endfor%}
         {%endblock%}
     </body>

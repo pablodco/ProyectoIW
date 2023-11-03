@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Be right back.</title>
+    <title>{{equipo.nombreEquipo}}</title>
   </head>
   <body>
     <header></header>
@@ -12,16 +12,31 @@
       </section>
       <section>
           {% for jugador in equipo.jugadores.all %}
-            <img src="" alt="imagen{{jugador.nombre}}">
-            <article>
-            <p>{{jugador.nombre}}</p>
-            <p>{{jugador.puntosPorPartido}}</p>
-            <p>{{jugador.asistenciasPorPartido}}</p>
-            <p>{{jugador.rebotesPorPartido}}</p>
-            <p>{{jugador.dorsal}}</p>
-            </article>
+            <img src="{{jugador.imagen}}" alt="imagen{{jugador.nombre}}" width="150" height="150">
+            <p> {{jugador.nombre}}</p>
+            <p>{{jugador.apellido}}</p>
+            <div>
+              <table>
+                <tr>
+                  <th><p>Dorsal:</p></th>
+                  <th><p>{{jugador.dorsal}}</p></th>
+                </tr>
+                <tr>
+                  <th><p>PPP:</p></th>
+                  <th><p>{{jugador.puntosPorPartido}}</p></th>
+                </tr>
+                <tr>
+                  <th><p>APP:</p></th>
+                  <th><p>{{jugador.asistenciasPorPartido}}</p></th>
+                </tr>
+                <tr>
+                  <th><p>RPP:</p></th>
+                  <th><p>{{jugador.rebotesPorPartido}}</p></th>
+                </tr>
+              </table>
+              <br><br>
+            </div>
           {% endfor %}
-        </table>
       </section>
     </main>
   </body>
