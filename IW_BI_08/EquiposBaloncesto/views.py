@@ -11,7 +11,7 @@ def inicio(Request):
     return render(Request,"prueba.html",context)
 
 def vistacategoria(Request,nombre_Categoria):
-    cat=categoria.objects.get(nombreCategoria=nombre_Categoria)
+    cat=categoria.objects.get( nombreCategoria = nombre_Categoria)
     context={
         'cat':cat,
         }
@@ -23,3 +23,10 @@ def vistaJugadores(Request,nombre_Categoria,nombre_Equipo):
         'equipo': equipo1
     }
     return render(Request,'equipo.html',context)
+
+def vistaEquipoInfo(Request, nombre_Categoria, nombre_Equipo):
+    equipo1 = equipo.objects.get(nombreEquipo = nombre_Equipo)
+    context={
+        'equipo': equipo1,
+    }
+    return render(Request,'equipoInfo.html',context)

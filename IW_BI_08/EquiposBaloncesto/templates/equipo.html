@@ -8,14 +8,13 @@
     <nav></nav>
     <main>
       <section>
-        <h1>{{equipo.nombreEquipo}}</h1>
+        <h2><i>{{equipo.nombreEquipo}}---{{equipo.ciudad}}</i></h2>
       </section>
       <section>
           {% for jugador in equipo.jugadores.all %}
-            <h3> {{jugador.nombre}} {{jugador.apellido}}</h3>
-            <p> <strong>Edad:</strong> {{jugador.edad}}</p>
-            <p> <strong>Nacionalidad:</strong> <img src="{{jugador.nacionalidad}}" alt="nacionalidad{{jugador.nombre}}" widht="15" height="12"></p>
             <img src="{{jugador.imagen}}" alt="imagen{{jugador.nombre}}" width="150" height="150">
+            <p> {{jugador.nombre}}</p>
+            <p>{{jugador.apellido}}</p>
             <div>
               <table>
                 <tr>
@@ -23,32 +22,16 @@
                   <th><p>{{jugador.dorsal}}</p></th>
                 </tr>
                 <tr>
-                  <th><p>Posicion:</p></th>
-                  <th><p>{{jugador.posicionl}}</p></th>
-                </tr>
-                <tr>
-                  <th><p>Partidos Jugados:</p></th>
-                  <th><p>{{jugador.partidosJugados}}</p></th>
-                </tr>
-                <tr>
-                  <th><p>PuntosPP:</p></th>
+                  <th><p>PPP:</p></th>
                   <th><p>{{jugador.puntosPorPartido}}</p></th>
                 </tr>
                 <tr>
-                  <th><p>AsistenciasPP:</p></th>
+                  <th><p>APP:</p></th>
                   <th><p>{{jugador.asistenciasPorPartido}}</p></th>
                 </tr>
                 <tr>
-                  <th><p>RebotesPP:</p></th>
+                  <th><p>RPP:</p></th>
                   <th><p>{{jugador.rebotesPorPartido}}</p></th>
-                </tr>
-                <tr>
-                  <th><p>TaponesPP:</p></th>
-                  <th><p>{{jugador.taponesPorPartido}}</p></th>
-                </tr>
-                <tr>
-                  <th><p>RobosPP:</p></th>
-                  <th><p>{{jugador.robosPorPartido}}</p></th>
                 </tr>
               </table>
               <br><br>
