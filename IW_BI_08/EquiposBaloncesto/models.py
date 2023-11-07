@@ -5,7 +5,8 @@ class jugador(models.Model):
     nombre = models.CharField(max_length=20)
     apellido = models.CharField(max_length=30)
     edad = models.IntegerField()
-    posicion = models.CharField(max_length=15)
+    nacionalidad = models.URLField(null=True)
+    posicion = models.CharField(max_length=30)
     puntosPorPartido= models.FloatField()
     asistenciasPorPartido= models.FloatField()
     rebotesPorPartido= models.FloatField()
@@ -29,4 +30,3 @@ class categoria(models.Model):
     descripcion = models.TextField()
     premio= models.CharField(max_length=30)
     logo= models.URLField(null=True)
-    
