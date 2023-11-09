@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>InfoBasket</title>
+        <link rel="icon" href="../../EquiposBaloncesto/Imagenes/marca.png" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <h1>INFOBASKET</h1>
+            <img src="" alt="logo">
+        </header>
+        <nav>
+            <a href="{% url 'noticia' %}">Noticias</a>
+            <a>Contacto</a>
+        </nav>
+        <section>
+            <h2>CATEGORIAS</h2>
+            {% block content %}
+            {% for categoria_con_equipos in categorias_con_equipos %}
+                <h3><a href="{% url 'categoria' categoria_con_equipos.categoria.nombreCategoria %}">
+                    {{ categoria_con_equipos.categoria.nombreCategoria }}
+                </a></h3>
+                {% for equipo in categoria_con_equipos.equipos %}
+                    {% if equipo.id == 1 %}
+                        <img src="../Imagenes/UmbertoLogo.png" width="100" height="100">
+                    {% else %}
+                        <img src="{{ equipo.logo }}" width="100" height="100">
+                    {% endif %}
+                {% endfor %}
+                <br><br>
+            {% endfor %}
+        
+
+            {% endblock %}
+        </section>
+        <footer></footer>
+        <h1>{{nombre}}</h1>
+    </body>
+</html>
