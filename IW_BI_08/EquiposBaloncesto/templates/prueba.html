@@ -9,7 +9,7 @@
             <img src="" alt="logo">
         </header>
         <nav>
-            <a>Noticias</a>
+            <a href="{% url 'noticia' %}">Noticias</a>
             <a>Contacto</a>
         </nav>
         <section>
@@ -17,7 +17,7 @@
             {% block content %}
             {% for categoria in categorias%}
             <article class="cat">
-                <h2><a href="% url 'categoria' categoria.nombreCategoria %">{{categoria.nombreCategoria}}</a>
+                <h2><a href="{% url 'categoria' categoria.nombreCategoria %}">{{categoria.nombreCategoria}}</a>
                 <p>{{categoria.descripcion}}</p>
                 </article>
             {% endfor %}

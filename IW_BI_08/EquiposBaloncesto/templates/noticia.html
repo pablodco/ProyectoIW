@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Noticias</title>
+    </head>
+    <body>
+        <header>
+            <h1>NOTICIERO</h1>
+        </header>
+        <section>
+            <h2>Noticias de las diferentes categorias:</h2>
+            {% block content %}
+            {% for categoria in categorias%}
+            <article class="cat">
+                <h2><a href="% url 'categoria' categoria.nombreCategoria %">{{categoria.nombreCategoria}}</a>
+                {% for noticia in categorias%}
+                <p>{{noticia.titularNoticia}}</p>
+                {% endfor %}
+                </article>
+            {% endfor %}
+            {% endblock %}
+        </section>
+        <footer></footer>
+        <h1>{{nombre}}</h1>
+    </body>
+</html>

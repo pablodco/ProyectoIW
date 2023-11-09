@@ -30,3 +30,10 @@ def vistaEquipoInfo(Request, nombre_Categoria, nombre_Equipo):
         'equipo': equipo1,
     }
     return render(Request,'equipoInfo.html',context)
+
+def vistaNoticias(Request):
+    categorias= categoria.objects.order_by('nombreCategoria')
+    context = { 
+        'categorias': categorias,
+        }
+    return render(Request,"noticia.html",context)

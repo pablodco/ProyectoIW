@@ -30,3 +30,10 @@ class categoria(models.Model):
     descripcion = models.TextField()
     premio= models.CharField(max_length=30)
     logo= models.URLField(null=True)
+
+class noticia(models.Model):
+    titularNoticia = models.CharField(max_length=20, unique=True)
+    descNoticia = models.CharField(max_length=100, unique=True)
+    textoImg = models.CharField(max_length=40, unique=True)
+    categoria= models.ForeignKey('categoria',on_delete=models.CASCADE, related_name='noticias')
+    imgNoticia = models.URLField(null=True)
