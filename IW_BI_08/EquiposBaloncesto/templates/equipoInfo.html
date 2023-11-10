@@ -1,18 +1,32 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{{equipo.nombreEquipo}}/Informacion</title>
-    </head>
-    <body>
-        <h1>{{equipo.nombre}}</h1>
-        {%block content%}
-        <img src="{{equipo.logo}}" width="100" height="100">
-        <br><br>
-        <h2>Propietario: {{equipo.nombrePropietario}}</h2>
-        <p>Ciudad: {{equipo.ciudad}}</p> 
-        <p>Liga: {{equipo.categoria.nombreCategoria}}</p>
-        <br><br>
-        {%endblock%}
-    </body>
+  <head>
+    <title>{{equipo.nombreEquipo}}/Informacion</title>
+  </head>
+  <body>
+    <header>
+      <h1>INFOBASKET</h1>
+      <img
+        src="https://i.ibb.co/Js7T3Zt/marca.png"
+        alt="marca"
+        width="150"
+        height="150"
+      />
+    </header>
+    <nav>
+      <a href="{% url 'noticia' %}">Noticias</a>
+      <a  href="{% url 'contacto' %}">Contacto</a>
+    </nav>
+    <main>
+      <h1>{{equipo.nombre}}</h1>
+      {%block content%}
+      <img src="{{equipo.logo}}" width="100" height="100" />
+      <br /><br />
+      <h2>Propietario: {{equipo.nombrePropietario}}</h2>
+      <p>Ciudad: {{equipo.ciudad}}</p>
+      <p>Liga: {{equipo.categoria.nombreCategoria}}</p>
+      <br /><br />
+      {%endblock%}
+    </main>
+  </body>
 </html>
