@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Noticias</title>
+    </head>
+    <body>
+        <header>
+            <h1>INFOBASKET</h1>
+            <img
+            src="https://i.ibb.co/Js7T3Zt/marca.png"
+            alt="marca"
+            width="100"
+            height="100"
+            />
+        </header>
+        <nav>
+            <a href="{% url 'noticia' %}">Noticias</a>
+            <a href="{% url 'contacto' %}">Contacto</a>
+        </nav>
+        <section>
+            <h2>{{noticia.titularNoticia}}</h2>
+            <p><img src="{{noticia.imgNoticia}}" alt="noticia{{noticia.titularNoticia}}" widht="150" height="150"></p>
+            <p>{{noticia.descNoticia}}</p>
+        </section>
+        <footer></footer>
+    </body>
+</html>

@@ -4,39 +4,32 @@
         <title>Noticias</title>
     </head>
     <body>
-        <header>
-            <h1>INFOBASKET</h1>
-            <img
-              src="https://i.ibb.co/Js7T3Zt/marca.png"
-              alt="marca"
-              width="150"
-              height="150"
-            />
-          </header>
-          <nav>
-            <a href="{% url 'noticia' %}">Noticias</a>
-            <a href="{% url 'contacto' %}">Contacto</a>
-          </nav>
-        <section>
-            <h3>Noticias de las diferentes categorias:</h3>
-            {% block content %}
-            {% for categoria in categorias%}
-            <article class="cat">
-                <h2><a href="{% url 'categoria' categoria.nombreCategoria %}">{{categoria.nombreCategoria}}</a>
-                {% for noticia in categoria.noticias.all%}
-                <table>
-                    <tr>
-                      <th><p>Titular:</p></th>
-                      <th><p>{{noticia.titularNoticia}}</p></th>
-                    </tr>
-                    <tr>
-                      <th><p>Descripcion:</p></th>
-                      <th><p>{{noticia.descNoticia}}</p></th>
-                    </tr>
-                    <tr>
-                      <th><p>Imagen:</p></th>
-                      <th><p><img src="{{noticia.imgNoticia}}" alt="noticia{{noticia.titularNoticia}}" widht="150" height="150"></p></th>
-                    </tr>
+      <header>
+        <h1>INFOBASKET</h1>
+        <img
+          src="https://i.ibb.co/Js7T3Zt/marca.png"
+          alt="marca"
+          width="100"
+          height="100"
+        />
+      </header>
+      <nav>
+        <a href="{% url 'noticia' %}">Noticias</a>
+        <a href="{% url 'contacto' %}">Contacto</a>
+      </nav>
+      <section>
+        <h3>Lista de noticias:</h3>
+        {% block content %}
+        {% for categoria in categorias%}
+        <article class="cat">
+          {% for noticia in categoria.noticias.all%}
+            <table>
+              <tr>
+                <th><p><img src="{{noticia.imgNoticia}}" alt="noticia{{noticia.titularNoticia}}" widht="150" height="150"></p></th>
+              </tr>
+              <tr>
+                <th><a>{{noticia.titularNoticia}}</a></th>
+              </tr>
                 </table>
                 {% endfor %}
                 </article>

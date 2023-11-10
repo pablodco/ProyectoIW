@@ -10,5 +10,6 @@ urlpatterns=[
     #path('<str:nombreCategoria>/<str:nombreEquipo>',views, name='equipo'),*/
     path('<str:nombre_Categoria>/<str:nombre_Equipo>', views.vistaJugadores, name='equipo'),
     path('noticias', views.vistaNoticias, name='noticia'),
-    path('contacto', views.contacto ,name='contacto')
+    path('contacto', views.contacto ,name='contacto'),
+    #path('noticias/<str:titular_noticia>', views.vistaNoticiasDetalle, name='noticiaDetalle')
 ]

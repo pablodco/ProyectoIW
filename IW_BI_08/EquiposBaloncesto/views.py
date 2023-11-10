@@ -52,6 +52,20 @@ def vistaNoticias(Request):
         }
     return render(Request,"noticia.html",context)
 
+from django.http import Http404
+
+#def vistaNoticiasDetalle(Request, titular_noticia):
+#    try:
+#        noticia = Noticia.objects.get(titularNoticia=titular_noticia)
+#    except Noticia.DoesNotExist:
+#        raise Http404("La noticia no existe")
+    
+#   context = {
+#       'noticia': noticia
+#    }
+#   return render(Request, 'noticiaDetalle.html', context)
+
+
 def inicio(Request):
     categorias= categoria.objects.order_by('nombreCategoria')
     context = { 
