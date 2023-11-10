@@ -5,3 +5,4 @@ from . import models
 admin.site.register(jugador)
 admin.site.register(equipo)
 admin.site.register(categoria)
+admin.site.register(noticia)
