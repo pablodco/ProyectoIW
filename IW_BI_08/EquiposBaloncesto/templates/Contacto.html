@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+    {% extends "base.html" %}
     <head>
         <title>Contacto</title>
     </head>
     <div id="contenedorGlobal">
         <br>
         <br>
+        {% block content %}
         <h1>Deja tus datos de contacto o suscribete para recibir las ultimas noticias</h1>
         <main>
             <form action="contacto">
@@ -57,7 +59,6 @@
                 </table>
             </section>
         </main>
+        {% endblock %}
     </div>
-    <footer>
-    </footer>
 </html>

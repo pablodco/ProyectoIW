@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html>
+  {% extends "base.html" %}
   <head>
     <title>{{equipo.nombreEquipo}}/Informacion</title>
   </head>
   <body>
     <header>
-      <h1>INFOBASKET</h1>
-      <img
-        src="https://i.ibb.co/Js7T3Zt/marca.png"
-        alt="marca"
-        width="100"
-        height="100"
-      />
     </header>
-    <nav>
-      <a href="{% url 'noticia' %}">Noticias</a>
-      <a  href="{% url 'contacto' %}">Contacto</a>
-    </nav>
     <main>
       <h1>{{equipo.nombre}}</h1>
       {%block content%}

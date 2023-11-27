@@ -96,6 +96,9 @@ def vistaEquipoInfo(Request, nombre_Categoria, nombre_Equipo):
 
 def contacto(Request):
     return render(Request,'contacto.html')
+
+
+    
 class listaEquipos(ListView):
     model= equipo
     template_name="listaEquipos.html"

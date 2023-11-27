@@ -1,4 +1,6 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>InfoBasket</title>
@@ -9,22 +11,10 @@
     />
   </head>
   <body>
-    <header>
-      <h1>INFOBASKET</h1>
-      <img
-        src="https://i.ibb.co/Js7T3Zt/marca.png"
-        alt="marca"
-        width="100"
-        height="100"
-      />
-    </header>
-    <nav>
-      <a href="{% url 'noticia' %}">Noticias</a>
-      <a href="{% url 'contacto' %}">Contacto</a>
-    </nav>
-    <section>
+    <main>
+      {% block content %}
       <h2>CATEGORIAS</h2>
-      {% block content %} {% for categoria in categorias%}
+      {% for categoria in categorias%}
       <h3>
         <a href="{% url 'categoria' categoria.nombreCategoria %}">
           {{ categoria.nombreCategoria }}
@@ -34,9 +24,8 @@
       <img src="{{ equipo.logo }}" width="100" height="100" />
       {% endfor %}
       <br /><br />
-      {% endfor %} {% endblock %}
-    </section>
-    <footer></footer>
-    <h1>{{nombre}}</h1>
+      {% endfor %} 
+      {% endblock %}
+    </main>
   </body>
 </html>
