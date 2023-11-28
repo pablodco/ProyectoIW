@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+
+
+<head>
+
+    <link rel="Stylesheet" href="{% static 'base.css' %}">
+    <meta charset="utf-8">
+    {% block enlacesCabecera %}
+    <title>InfoBasket</title>
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <div class="video-container">
+        <video width="100%" height="auto" autoplay loop muted>
+            <source src="SnapInsta.io-NBA Epic Moments.mp4" type="video/mp4">
+        </video>
+    </div>
+    <header>
+        <div class="header-container">
+            <div class="headerReal">
+                <div class="seccionIzquierda">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Adidas_logo.png/1024px-Adidas_logo.png">
+                    <img src="https://cdn.freebiesupply.com/images/large/2x/air-jordan-logo-png-transparent.png">
+                    <img src="https://brandika.co/wp-content/uploads/2018/09/burger-king-logo-png-500.png">
+                </div>
+                <div id="seccionCentro">
+                    <a href=""><img src="https://i.ibb.co/Js7T3Zt/marca.png" alt="Logo de marca"></a>
+                </div>
+                <div class="seccionDerecha">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Acb_2019_logo.svg/1200px-Acb_2019_logo.svg.png">
+                    <img src="https://loodibee.com/wp-content/uploads/nba-logo-transparent.png">
+                    <img src="https://basketmaniatenerife.es/wp-content/uploads/2022/02/logo.jpg">
+
+                </div>
+            </div>
+            <div>
+                <table id="menu">
+                    <tr>
+                        <th><a href="{% url 'noticia' %}">NOTICIAS</a></th>
+                        <th id="ligas"><a href="{% url 'inicio' %}">LIGAS</a></th>
+                        <th><a href="{% url 'contacto' %}">CONTACTAR</a></th>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+
+        <div class="footerReal">
+            <div id="logo">
+                <a href=""><img src="https://i.ibb.co/Js7T3Zt/marca.png" alt="Logo de marca" width="175"
+                        height="175"></a>
+            </div>
+            <div>
+                <p><strong>
+                        En este rincón digital, te invitamos a explorar el fascinante mundo del baloncesto a través de
+                        los
+                        ojos de INFOBASKET. Aquí encontrarás una fuente inagotable de información, desde las últimas
+                        noticias
+                        y emocionantes momentos en la cancha hasta perfiles detallados de nuestros talentosos jugadores
+                        de las diferentes ligas.
+                    </strong>
+                </p>
+            </div>
+            <div id="redesSociales">
+                <table>
+                    <tr>
+                        <th><a href="https://www.instagram.com/"><img
+                                    src="https://cdn4.iconfinder.com/data/icons/social-media-black-white-2/600/Instagram_glyph_svg-512.png"
+                                    width="30" height="30">
+                            </a></th>
+                        <th><a href="https://www.facebook.com/"><img
+                                    src="https://static.vecteezy.com/system/resources/previews/023/986/470/original/facebook-logo-facebook-logo-transparent-facebook-icon-transparent-free-free-png.png"
+                                    width="30" height="30">
+                            </a></th>
+                        <th><a href="https://twitter.com/"><img
+                                    src="https://cdn.icon-icons.com/icons2/3913/PNG/512/meta_logo_icon_248489.png"
+                                    width="30" height="30">
+                            </a></th>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+    </footer>
+</body>

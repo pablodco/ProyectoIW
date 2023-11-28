@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>InfoBasket</title>
+    <link
+      rel="icon"
+      src="https://i.ibb.co/Js7T3Zt/marca.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <main>
+      {% block content %}
+      <h2>CATEGORIAS</h2>
+      {% for categoria in categorias%}
+      <h3>
+        <a href="{% url 'categoria' categoria.nombreCategoria %}">
+          {{ categoria.nombreCategoria }}
+        </a>
+      </h3>
+      {% for equipo in categoria.equipos.all %}
+      <img src="{{ equipo.logo }}" width="100" height="100" />
+      {% endfor %}
+      <br /><br />
+      {% endfor %} 
+      {% endblock %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  {% extends "base.html" %}
+    <head>
+        <title>Noticias</title>
+    </head>
+    <body>
+      <main>
+        {% block content %}
+        <h3>Lista de noticias:</h3>
+        {% for categoria in categorias%}
+        <article class="cat">
+          {% for noticia in categoria.noticias.all%}
+            <table>
+              <tr>
+                <th><p><img src="{{noticia.imgNoticia}}" alt="noticia{{noticia.titularNoticia}}" widht="150" height="150"></p></th>
+              </tr>
+              <tr>
+                <th><a>{{noticia.titularNoticia}}</a></th>
+              </tr>
+                </table>
+                {% endfor %}
+                </article>
+            {% endfor %}
+            {% endblock %}
+        </main>
+    </body>
+</html>

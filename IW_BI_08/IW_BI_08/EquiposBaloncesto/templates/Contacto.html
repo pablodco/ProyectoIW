@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    {% extends "base.html" %}
+    <head>
+        <title>Contacto</title>
+    </head>
+    <div id="contenedorGlobal">
+        <br>
+        <br>
+        {% block content %}
+        <h1>Deja tus datos de contacto o suscribete para recibir las ultimas noticias</h1>
+        <main>
+            <form action="contacto">
+                <fieldset>
+                    <legend>Datos de contacto</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre"> <br>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido"> <br>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email"> <br>
+                    <label for="direccion">Direccion:</label>
+                    <input type="text" name="direccion" id="direccion"> <br>
+                </fieldset>
+            </form>
+
+
+            <form action="suscripcion">
+                <fieldset>
+                    <legend>Datos de suscripcion</legend>
+                    <label for="nombre2">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre2"> <br>
+                    <label for="apellido2">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido2"> <br>
+                    <label for="email2">Email:</label>
+                    <input type="email" name="email" id="email2"> <br>
+                    <label for="contrasena">Contrasena</label>
+                    <input type="password" name="contrasena" id="contrasena"><br>
+                    <label for="direccion2">Direccion:</label>
+                    <input type="text" name="direccion" id="direccion2"> <br>
+                    <input type="submit" name="suscribete" value="suscribete">
+                </fieldset>
+            </form>
+            <section>
+                <H3>Contactanos</H3>
+                <table>
+                    <tr>
+                        <td>tlfn</td>
+                        <td>+34 900 380 783</td>
+                    </tr>
+                    <tr>
+                        <td>email</td>
+                        <td>infobasquet@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>direccion</td>
+                        <td>Gran Via 47, Bilbao</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        {% endblock %}
+    </div>
+</html>

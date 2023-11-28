@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block enlacesCabecera %}
+<link rel="stylesheet" href="{% static 'equipo.css' %}">
+<title>{{equipo.nombreEquipo}}</title>
+{% endblock %}
+
+
+{% block content %}
+<div id="bloqueCentral">
+  <div>
+    <h1 id="equipo"><strong>{{equipo.nombreEquipo}}</strong></h1>
+  </div>
+  <div>
+    <table id="tablaPrincipal">
+      <tr>
+        {% for jugador in equipo.jugadores.all %}
+        <td>
+          <div>
+            <img src="{{jugador.imagen}}" alt="imagen{{jugador.nombre}}" width="150" height="150">
+            <h3>{{jugador.nombre}} {{jugador.apellido}}</h3>
+            <p> <strong>Nacionalidad:</strong> <img src="{{jugador.nacionalidad}}" alt="nacionalidad{{jugador.nombre}}"
+                widht="15" height="12"></p>
+            <table>
+              <tr>
+                <th class="enum">
+                  <p>Edad:</p>
+                </th>
+                <th>
+                  <p>{{jugador.edad}}</p>
+                </th>
+              </tr>
+              <tr>
+                <th class="enum">
+                  <p>Dorsal:</p>
+                </th>
+                <th>
+                  <p>{{jugador.dorsal}}</p>
+                </th>
+              </tr>
+              <tr>
+                <th class="enum">
+                  <p>Posicion:</p>
+                </th>
+                <th>
+                  <p>{{jugador.posicion}}</p>
+                </th>
+              </tr>
+              <tr>
+                <th class="enum">
+                  <p>Partidos Jugados:</p>
+                </th>
+                <th>
+                  <p>{{jugador.partidosJugados}}</p>
+                </th>
+              </tr>
+              <tr>
+                <th class="enum">
+                  <p>PuntosPP:</p>
+                </th>
+                <th>
+                  <p>{{jugador.puntosPorPartido}}</p>
+                </th>
+              </tr>
+              <tr>
+                <th class="enum">
+                  <p>AsistenciasPP:</p>
+                </th>
+                <th>
+                  <p>{{jugador.asistenciasPorPartido}}</p>
+                </th>
+              </tr>
+              <tr>
+                <th class="enum">
+                  <p>RebotesPP:</p>
+                </th>
+                <th>
+                  <p>{{jugador.rebotesPorPartido}}</p>
+                </th>
+              </tr>
+              <tr>
+                <th class="enum">
+                  <p>TaponesPP:</p>
+                </th>
+                <th>
+                  <p>{{jugador.taponesPorPartido}}</p>
+                </th>
+              </tr>
+              <tr>
+                <th class="enum">
+                  <p>RobosPP:</p>
+                </th>
+                <th>
+                  <p>{{jugador.robosPorPartido}}</p>
+                </th>
+              </tr>
+            </table>
+            <br><br>
+          </div>
+        </td>
+        {% if forloop.counter|divisibleby:3 and not forloop.last %}
+      </tr>
+      <tr>
+        {% endif %}
+        {% endfor %}
+      </tr>
+    </table>
+  </div>
+</div>
+{% endblock %}
